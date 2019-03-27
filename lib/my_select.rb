@@ -4,13 +4,12 @@ def my_select(array)
     new_array = []
     while i < array.length
       number = array[i]
-      if number % 2 == 0
-        new_array.push(number)
-      end
-      i += 1
+      if yield(array[i])
+      new_array << array[i]
     end
-    new_array
+    i+=1
   end
+  new_array
 end
   
     

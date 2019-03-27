@@ -4,8 +4,8 @@ def my_select(array)
     new_array = []
     while i < array.length
       number = array[i]
-      if yield(array[i])
-      new_array << array[i]
+      if yield(number)
+      new_array << number
     end
     i+=1
   end
@@ -15,8 +15,6 @@ end
     
 array = [1, 2, 3, 4, 5]
 
-my_select(array) 
-
-# do |number|
-#   number
-# end
+my_select(array) do |number|
+  number % 2 == 0
+end
